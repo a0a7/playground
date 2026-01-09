@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .winner-card {
+            background: linear-gradient(135deg, #10b98115 0%, #059669 15 100%);
+            border: 3px solid #10b981;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .winner-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+        
+        .winner-card h2 {
+            color: #065f46;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .winner-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .winner-stat {
+            text-align: center;
+        }
+        
+        .winner-stat-label {
+            color: #059669;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .winner-stat-value {
+            color: #065f46;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+        
+        .comparison-table th:not(:first-child) {
+            text-align: right;
+        }
+        
+        .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .comparison-table .strategy-name {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table .best-row {
+            background: #d1fae5;
+        }
+        
+        .comparison-table .best-row:hover {
+            background: #a7f3d0;
+        }
+        
+        .comparison-table td:not(:first-child) {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .positive {
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .negative {
+            color: #ef4444;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 700;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 20px 40px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9em;
+            border-top: 2px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Strategy Comparison</h1>
+            <div class="subtitle">Performance Comparison Across Strategies</div>
+        </div>
+        
+        <div class="content">
+            <!-- Winner Section -->
+            <div class="winner-card">
+                <div class="winner-badge">🥇 TOP PERFORMER</div>
+                <h2>Multi-Strategy Combo</h2>
+                <p style="color: #065f46; margin-bottom: 15px;">Best performing strategy by total return</p>
+                <div class="winner-stats">
+                    <div class="winner-stat">
+                        <div class="winner-stat-label">Total Return</div>
+                        <div class="winner-stat-value">26.81%</div>
+                    </div>
+                    <div class="winner-stat">
+                        <div class="winner-stat-label">Final Value</div>
+                        <div class="winner-stat-value">$126,806</div>
+                    </div>
+                    <div class="winner-stat">
+                        <div class="winner-stat-label">Win Rate</div>
+                        <div class="winner-stat-value">53.8%</div>
+                    </div>
+                    <div class="winner-stat">
+                        <div class="winner-stat-label">Sharpe Ratio</div>
+                        <div class="winner-stat-value">1.21</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparison Table -->
+            <h2 class="section-title">📊 Detailed Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>Final Value</th>
+                        <th>Return %</th>
+                        <th>Total Trades</th>
+                        <th>Win Rate %</th>
+                        <th>Profit Factor</th>
+                        <th>Max DD %</th>
+                        <th>Sharpe Ratio</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="best-row">
+                        <td class="strategy-name">
+                            Multi-Strategy Combo
+                             🥇
+                        </td>
+                        <td>$126,805.99</td>
+                        <td class="positive">+26.81%</td>
+                        <td>26</td>
+                        <td>53.8%</td>
+                        <td>2.87x</td>
+                        <td>4.98%</td>
+                        <td>1.21</td>
+                    </tr>
+
+                    <tr class="">
+                        <td class="strategy-name">
+                            MACD Trend
+                             🥈
+                        </td>
+                        <td>$121,318.91</td>
+                        <td class="positive">+21.32%</td>
+                        <td>44</td>
+                        <td>45.5%</td>
+                        <td>2.21x</td>
+                        <td>3.88%</td>
+                        <td>1.05</td>
+                    </tr>
+
+                    <tr class="">
+                        <td class="strategy-name">
+                            SMA Crossover (20/50)
+                             🥉
+                        </td>
+                        <td>$114,605.57</td>
+                        <td class="positive">+14.61%</td>
+                        <td>13</td>
+                        <td>46.2%</td>
+                        <td>3.09x</td>
+                        <td>5.74%</td>
+                        <td>1.00</td>
+                    </tr>
+
+                    <tr class="">
+                        <td class="strategy-name">
+                            Bollinger Bands
+                            
+                        </td>
+                        <td>$109,418.67</td>
+                        <td class="positive">+9.42%</td>
+                        <td>22</td>
+                        <td>54.5%</td>
+                        <td>1.72x</td>
+                        <td>5.15%</td>
+                        <td>0.47</td>
+                    </tr>
+
+                    <tr class="">
+                        <td class="strategy-name">
+                            RSI Mean Reversion
+                            
+                        </td>
+                        <td>$104,674.05</td>
+                        <td class="positive">+4.67%</td>
+                        <td>7</td>
+                        <td>42.9%</td>
+                        <td>2.06x</td>
+                        <td>4.14%</td>
+                        <td>0.33</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            Generated by Algorithmic Trading System | 2026-01-09 08:58:24
+        </div>
+    </div>
+</body>
+</html>

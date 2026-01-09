@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Trading Comparison (SPY+QQQ+IWM)</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: white;
+            color: black;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            text-align: left;
+            border-bottom: 2px solid black;
+            padding: 10px 5px;
+        }
+        
+        td {
+            padding: 8px 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        tr:last-child td {
+            border-bottom: 2px solid black;
+        }
+        
+        .right {
+            text-align: right;
+        }
+        
+        .best {
+            background: #f0f0f0;
+        }
+        
+        .benchmark {
+            background: #f9f9f9;
+        }
+        
+        .winner-box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px 0 30px 0;
+        }
+        
+        .winner-box div {
+            margin: 5px 0;
+        }
+        
+        .info-box {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            background: #fafafa;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid black;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>UNIVERSE TRADING COMPARISON (SPY+QQQ+IWM)</h1>
+    
+    <div class="winner-box">
+        <div><strong>TOP PERFORMING STRATEGY: Simple 200-MA Filter</strong></div>
+        <div>Final Value: $104,294.35</div>
+        <div>Return: 4.29%</div>
+        <div>Win Rate: 34.3%</div>
+        <div>Sharpe Ratio: 0.19</div>
+    </div>
+    
+    <h2>ALGORITHMIC TRADING STRATEGIES</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Strategy</th>
+            <th class="right">Final Value</th>
+            <th class="right">Return %</th>
+            <th class="right">Trades</th>
+            <th class="right">Win Rate %</th>
+            <th class="right">Profit Factor</th>
+            <th class="right">Max DD %</th>
+            <th class="right">Sharpe</th>
+        </tr>
+
+        <tr class="best">
+            <td>1</td>
+            <td>Simple 200-MA Filter</td>
+            <td class="right">$104,294.35</td>
+            <td class="right">+4.29%</td>
+            <td class="right">35</td>
+            <td class="right">34.3%</td>
+            <td class="right">1.30</td>
+            <td class="right">14.89%</td>
+            <td class="right">0.19</td>
+        </tr>
+
+        <tr class="">
+            <td>2</td>
+            <td>Universe Rotation (SMA 20/50 + 200-MA)</td>
+            <td class="right">$99,019.16</td>
+            <td class="right">-0.98%</td>
+            <td class="right">23</td>
+            <td class="right">34.8%</td>
+            <td class="right">0.76</td>
+            <td class="right">13.36%</td>
+            <td class="right">-0.03</td>
+        </tr>
+
+    </table>
+    
+    <h2>BENCHMARK COMPARISON</h2>
+    <div class="info-box">
+        Benchmarks represent passive buy-and-hold investments in S&P 500 index funds
+        with the same initial capital and time period. This provides context for 
+        evaluating algorithmic trading performance.
+    </div>
+    <table>
+        <tr>
+            <th>Benchmark</th>
+            <th class="right">Final Value</th>
+            <th class="right">Return %</th>
+            <th class="right">Type</th>
+        </tr>
+
+        <tr class="benchmark">
+            <td>Schwab S&P 500 Index Fund</td>
+            <td class="right">$196,099.06</td>
+            <td class="right">+96.10%</td>
+            <td class="right">S&P 500 Index</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>Vanguard S&P 500 ETF</td>
+            <td class="right">$195,928.91</td>
+            <td class="right">+95.93%</td>
+            <td class="right">S&P 500 Index</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>iShares Core S&P 500 ETF</td>
+            <td class="right">$195,773.60</td>
+            <td class="right">+95.77%</td>
+            <td class="right">S&P 500 Index</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>SPDR S&P 500 ETF</td>
+            <td class="right">$195,295.46</td>
+            <td class="right">+95.30%</td>
+            <td class="right">S&P 500 Index</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>Cash (3.0% Inflation)</td>
+            <td class="right">$100,000.00</td>
+            <td class="right">+0.00%</td>
+            <td class="right">Inflation Baseline</td>
+        </tr>
+
+    </table>
+    
+    <h2>COMPLETE RANKING</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Strategy/Benchmark</th>
+            <th class="right">Final Value</th>
+            <th class="right">Return %</th>
+        </tr>
+
+        <tr class="benchmark">
+            <td>1</td>
+            <td>Schwab S&P 500 Index Fund</td>
+            <td class="right">$196,099.06</td>
+            <td class="right">+96.10%</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>2</td>
+            <td>Vanguard S&P 500 ETF</td>
+            <td class="right">$195,928.91</td>
+            <td class="right">+95.93%</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>3</td>
+            <td>iShares Core S&P 500 ETF</td>
+            <td class="right">$195,773.60</td>
+            <td class="right">+95.77%</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>4</td>
+            <td>SPDR S&P 500 ETF</td>
+            <td class="right">$195,295.46</td>
+            <td class="right">+95.30%</td>
+        </tr>
+
+        <tr class="">
+            <td>5</td>
+            <td>Simple 200-MA Filter</td>
+            <td class="right">$104,294.35</td>
+            <td class="right">+4.29%</td>
+        </tr>
+
+        <tr class="benchmark">
+            <td>6</td>
+            <td>Cash (3.0% Inflation)</td>
+            <td class="right">$100,000.00</td>
+            <td class="right">+0.00%</td>
+        </tr>
+
+        <tr class="">
+            <td>7</td>
+            <td>Universe Rotation (SMA 20/50 + 200-MA)</td>
+            <td class="right">$99,019.16</td>
+            <td class="right">-0.98%</td>
+        </tr>
+
+    </table>
+    
+    <div class="footer">
+        Generated by Algorithmic Trading System - 2026-01-09 09:10:42
+        <br>
+        Note: Benchmark Max DD and Sharpe Ratio require full historical data analysis and are not calculated here.
+    </div>
+</body>
+</html>
